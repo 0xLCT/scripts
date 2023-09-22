@@ -6,7 +6,7 @@ Setup (Run as root)*
 bash <(curl -s https://raw.githubusercontent.com/lctrevizan/ubuntuscript/main/script.sh)
 ```
 
-Install docker
+Install docker*
 ```
 bash <(curl -s https://raw.githubusercontent.com/lctrevizan/ubuntuscript/main/docker.sh)
 ```
