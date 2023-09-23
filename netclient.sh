@@ -1,6 +1,27 @@
-#Made by Netmaker
-sudo apt install wireguard #Install wireguard first to avoid issues
-curl -sL 'https://apt.netmaker.org/gpg.key' | sudo tee /etc/apt/trusted.gpg.d/netclient.asc
-curl -sL 'https://apt.netmaker.org/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/netclient.list
-sudo apt update
-sudo apt install netclient 
+#!/bin/bash
+
+# Function to add Netmaker repository
+add_netmaker_repository() {
+    echo "Adding Netmaker repository..."
+    curl -sL 'https://apt.netmaker.org/gpg.key' | sudo tee /etc/apt/trusted.gpg.d/netclient.asc || { echo "Error: Could not add Netmaker GPG key"; exit 1; }
+    curl -sL 'https://apt.netmaker.org/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/netclient.list || { echo "Error: Could not add Netmaker repository"; exit 1; }
+}
+
+# Function to install WireGuard and Netclient
+install_wireguard_netclient() {
+    echo "Installing WireGuard..."
+    sudo apt install wireguard -y || { echo "Error: Could not install WireGuard"; exit 1; }
+
+    add_netmaker_repository
+
+    echo "Updating package list..."
+    sudo apt update || { echo "Error: Could not update package list"; exit 1; }
+
+    echo "Installing Netclient..."
+    sudo apt install netclient -y || { echo "Error: Could not install Netclient"; exit 1; }
+}
+
+# Call the function to install WireGuard and Netclient
+install_wireguard_netclient
+
+echo "Netclient installation completed."
