@@ -22,6 +22,20 @@ install_wireguard_netclient() {
 }
 
 # Call the function to install WireGuard and Netclient
-install_wireguard_netclient
+#!/bin/bash
+
+echo "Press y or n: "
+read input
+
+if [ "$input" = "y" ]; then
+  echo "Installing Netclient."
+  install_wireguard_netclient
+elif [ "$input" = "n" ]; then
+  echo "Exiting..."
+else
+  echo "Invalid input."
+fi
+
+
 
 echo "Netclient installation completed."
