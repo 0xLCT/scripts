@@ -1,44 +1,56 @@
+#!/bin/bash
+
+# Function to update packages
+update_packages() {
+    sudo apt-get update
+    if [ $? -ne 0 ]; then
+        echo "Failed to update packages"
+        exit 1
+    fi
+}
+
+# Function to install dependencies
+install_dependencies() {
+    sudo apt-get install ca-certificates curl gnupg -y
+    if [ $? -ne 0 ]; then
+        echo "Failed to install dependencies"
+        exit 1
+    fi
+}
+
+# Function to add Docker's GPG key
+add_docker_gpg() {
+    local url=\$1
+    sudo mkdir -m 0755 -p /etc/apt/keyrings
+    curl -fsSL $url | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    if [ $? -ne 0 ]; then
+        echo "Failed to add Docker's GPG key"
+        exit 1
+    fi
+}
+
 # Check if system is Debian or Ubuntu and install Docker
 if [ -e /etc/debian_version ]; then
-
-   # Check if Ubuntu
-   if grep -qi ubuntu /etc/os-release; then
-
-       # Remove any existing Docker installs
-       sudo apt-get remove docker docker.io containerd runc
-
-       # Update packages and install dependencies
-       sudo apt-get update
-       sudo apt-get install ca-certificates curl gnupg -y
-
-       # Add Docker GPG key
-       sudo mkdir -m 0755 -p /etc/apt/keyrings
-       curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-
-   # Else must be Debian
-   else
-
-       # Remove any existing Docker packages
-       for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
-
-       # Update packages and install dependencies 
-       sudo apt-get update
-       sudo apt-get install ca-certificates curl gnupg
-
-       # Add Docker GPG key
-       sudo install -m 0755 -d /etc/apt/keyrings
-       curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-
-   fi
-
-   # Add Docker repository 
-   echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-   # Install Docker and dependencies
-   sudo apt-get update
-   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose -y
-
-# Not Debian/Ubuntu, exit  
+    # Check if Ubuntu
+    if grep -qi ubuntu /etc/os-release; then
+        # Remove any existing Docker installs
+        sudo apt-get remove docker docker.io containerd runc
+        update_packages
+        install_dependencies
+        add_docker_gpg "https://download.docker.com/linux/ubuntu/gpg"
+    # Else must be Debian
+    else
+        # Remove any existing Docker packages
+        for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+        update_packages
+        install_dependencies
+        add_docker_gpg "https://download.docker.com/linux/debian/gpg"
+    fi
+    # Add Docker repository 
+    echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    update_packages
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose -y
 else
    echo "Incompatible distribution"
+   exit 1
 fi
