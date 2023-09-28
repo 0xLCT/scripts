@@ -1,5 +1,5 @@
-# ubuntuscript
-My personal ubuntu setup script
+# DebScripts
+My personal Debian/Ubuntu scripts
 
 Setup (Run as root)*
 ```
