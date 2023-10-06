@@ -20,16 +20,14 @@ install_dependencies() {
 
 # Function to add Docker's GPG key
 add_docker_gpg_debian() {
-    local url=\$1
     sudo mkdir -m 0755 -p /etc/apt/keyrings
-    curl -fsSL $url | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     if [ $? -ne 0 ]; then
         echo "Failed to add Docker's GPG key"
         exit 1
     fi
 }
 add_docker_gpg_ubuntu() {
-    local url=\$1
     sudo mkdir -m 0755 -p /etc/apt/keyrings
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     if [ $? -ne 0 ]; then
