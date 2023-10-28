@@ -25,7 +25,7 @@ install_wireguard_netclient() {
 #!/bin/bash
 
 echo "Press y or n: "
-read input
+read -r input
 
 if [ "$input" = "y" ]; then
   echo "Installing Netclient."
