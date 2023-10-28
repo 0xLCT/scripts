@@ -3,7 +3,7 @@ My personal Debian/Ubuntu scripts
 
 Setup (Run as root)*
 ```
-bash <(curl -s https://raw.githubusercontent.com/lctrevizan/ubuntuscript/main/script.sh)
+bash <(curl -s https://raw.githubusercontent.com/lctrevizan/debscripts/main/setup.sh)
 ```
 
 Install docker*
