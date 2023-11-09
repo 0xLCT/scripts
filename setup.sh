@@ -1,5 +1,7 @@
 #!/bin/sh
 
+apt install sudo -y
+
 # Update package lists
 sudo apt update
 
@@ -7,7 +9,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # Install sudo
-sudo apt install sudo -y
+
 
 # Add Git PPA and install latest Git
 sudo add-apt-repository ppa:git-core/ppa -y
