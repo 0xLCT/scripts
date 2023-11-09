@@ -1,14 +1,14 @@
 #!/bin/sh
 
 update_packages() {
-    if ! /usr/bin/apt-get update; then
+    if ! sudo /usr/bin/apt-get update; then
         echo "Failed to update packages"
         exit 1
     fi
 }
 
 install_dependencies() {
-    /usr/bin/apt-get install ca-certificates curl gnupg -y
+    sudo /usr/bin/apt-get install ca-certificates curl gnupg -y
     if ! /usr/bin/apt-get install ca-certificates curl gnupg -y
     then
         echo "Failed to install dependencies"
@@ -18,7 +18,7 @@ install_dependencies() {
 
 add_docker_gpg_debian() {
     /usr/bin/mkdir -p /etc/apt/keyrings
-    chmod 0755 /etc/apt/keyrings
+    sudo chmod 0755 /etc/apt/keyrings
     if ! /usr/bin/curl -fsSL https://download.docker.com/linux/debian/gpg | /usr/bin/gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     then
         echo "Failed to add Docker's GPG key"
@@ -28,7 +28,7 @@ add_docker_gpg_debian() {
 
 add_docker_gpg_ubuntu() {
     /usr/bin/mkdir -p /etc/apt/keyrings
-    chmod 0755 /etc/apt/keyrings
+    sudo chmod 0755 /etc/apt/keyrings
     if ! /usr/bin/curl -fsSL https://download.docker.com/linux/ubuntu/gpg | /usr/bin/gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     then
         echo "Failed to add Docker's GPG key"
@@ -48,7 +48,7 @@ if [ -e /etc/debian_version ]; then
         install_dependencies
         add_docker_gpg_debian
     fi
-    echo "deb [arch=$(/bin/arch) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | /usr/bin/tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo echo "deb [arch=$(/bin/arch) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | /usr/bin/tee /etc/apt/sources.list.d/docker.list > /dev/null
     update_packages
     /usr/bin/apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose -y
 else
