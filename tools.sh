@@ -7,19 +7,19 @@ main() {
 
     function1() {
         echo "[1]Debian choosen"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/deb/toolsdeb.sh | sh
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/toolsdeb.sh)
     }
 
     function2() {
         echo "[2]Redhat choosen"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/deb/toolsrh.sh | sh
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/rh/toolsrh.sh)
     }
 
     # ... define functions 3 to 9 similarly ...
 
     function8() {
         echo "[8]Pentest choosen"
-    }
+    }   bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/pentest/toolspentest.sh)
     echo "lctrev's"
     cat << "EOF"        
   ___ _        _ _   _            _    
@@ -38,4 +38,4 @@ EOF
         echo "Invalid number. Please enter a number between 0 and 9."
     fi
 }
-main
+mainshc

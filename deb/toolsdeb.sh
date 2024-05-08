@@ -7,16 +7,16 @@ main() {
 
     function1() {
         echo "[1] Setup choosen"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/deb/setup.sh | sh
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/setup.sh)
     }
 
     function2() {
         echo "[2] Install docker choosen"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/ubuntuscript/main/deb/docker.sh | sh
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/docker.sh)
     }
-    function2() {
+    function3() {
         echo "[3] Install synchthing choosen"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/ubuntuscript/main/deb/syncthing.sh | sh
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/syncthing.sh)
     }
 
 
