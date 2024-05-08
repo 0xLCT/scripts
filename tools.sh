@@ -19,7 +19,8 @@ main() {
 
     function8() {
         echo "[8]Pentest choosen"
-    }   bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/pentest/toolspentest.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/pentest/toolspentest.sh)
+    }   
     echo "lctrev's"
     cat << "EOF"        
   ___ _        _ _   _            _    
@@ -38,4 +39,4 @@ EOF
         echo "Invalid number. Please enter a number between 0 and 9."
     fi
 }
-mainshc
+main
