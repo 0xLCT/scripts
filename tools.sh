@@ -21,7 +21,7 @@ main() {
         echo "[8]Pentest choosen"
         bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/pentest/toolspentest.sh)
     }   
-    echo "lctrev's"
+    printf "\nlctrev's\n"
     cat << "EOF"        
   ___ _        _ _   _            _    
  / __| |_  ___| | | | |_ ___  ___| |___

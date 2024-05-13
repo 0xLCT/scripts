@@ -1,6 +1,6 @@
 #!/bin/sh
 
-apt install sudo -y
+su -c 'apt install sudo'
 
 # Update package lists
 sudo apt update

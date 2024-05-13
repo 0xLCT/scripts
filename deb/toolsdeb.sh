@@ -26,7 +26,7 @@ main() {
         echo "[8]Pentest choosen"
     }
 
-    printf "Debian Tools\n\nSelect an option 0-9 \n\n[1] Debian\n[2] Install docker\n[3] Install and enable Syncthing\n[0] Exit\n "
+    printf "Debian Tools\n\nSelect an option 0-9 \n\n[1] Initial setup\n[2] Install docker\n[3] Install and enable Syncthing\n[0] Exit\n "
     read num
 
     if [ "$num" -ge 0 ] && [ "$num" -le 9 ]; then

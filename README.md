@@ -1,7 +1,7 @@
-# DebScripts
+# Scripts
 My personal Shell scripts
 
-Tools Menu
+Shell Tools
 ```
 bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/tools.sh)
 ```
