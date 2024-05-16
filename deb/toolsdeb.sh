@@ -24,7 +24,7 @@ main() {
     }
     function5() {
         echo "[5] Install VSCode choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/nodeinstall.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/vscodeinstall.sh)
     }
 
 
