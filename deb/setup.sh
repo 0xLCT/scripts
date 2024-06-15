@@ -1,15 +1,15 @@
 #!/bin/sh
 
-su -c 'apt install sudo'
+# Check if sudo is installed
+if ! command -v sudo > /dev/null 2>&1; then
+  su -c 'apt install sudo'
+fi
 
 # Update package lists
 sudo apt update
 
 # Upgrade all packages
 sudo apt upgrade -y
-
-# Install sudo
-
 
 # Add Git PPA and install latest Git
 sudo add-apt-repository ppa:git-core/ppa -y
