@@ -14,8 +14,10 @@ main() {
         echo "[2]Redhat choosen"
         bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/rh/toolsrh.sh)
     }
-
-    # ... define functions 3 to 9 similarly ...
+    function2() {
+        echo "[5]Linux choosen"
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/toolslinux.sh)
+    }
 
     function8() {
         echo "[8]Pentest choosen"
@@ -30,7 +32,7 @@ main() {
                                        
     
 EOF
-    printf "Select an option 0-9 \n\n[1] Debian\n[2] Redhat\n[8] Pentest\n[0] Exit\n "
+    printf "Select an option 0-9 \n\n[1] Debian\n[2] Redhat\n[5] Linux\n[8] Pentest\n[0] Exit\n "
     read num
 
     if [ "$num" -ge 0 ] && [ "$num" -le 9 ]; then
