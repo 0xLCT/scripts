@@ -6,15 +6,6 @@ main() {
     }
 
     function1() {
-        echo "[1]Linux choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/toolsdeb.sh)
-    }
-
-    function2() {
-        echo "[2]Redhat choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/rh/toolsrh.sh)
-    }
-    function5() {
         echo "[5]Linux choosen"
         bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/toolslinux.sh)
     }
