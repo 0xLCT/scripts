@@ -6,7 +6,7 @@ main() {
     }
     function1() {
         echo "Debian"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/linux/debian/toolsdeb.sh
+        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/linux/deb/toolsdeb.sh
     }
     function2() {
         echo "Redhat"

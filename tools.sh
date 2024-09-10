@@ -6,8 +6,12 @@ main() {
     }
 
     function1() {
-        echo "[5]Linux choosen"
+        echo "[1]Linux choosen"
         bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/toolslinux.sh)
+    }
+    function2() {
+        echo "[2]Convert choosen"
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/convert/toolsconvert.sh)
     }
 
     function8() {
@@ -23,7 +27,7 @@ main() {
                                        
     
 EOF
-    printf "Select an option 0-9 \n\n[1] Linux\n[8] Pentest\n[0] Exit\n "
+    printf "Select an option 0-9 \n\n[1] Linux\n [2] Convert\n [8] Pentest\n[0] Exit\n "
     read num
 
     if [ "$num" -ge 0 ] && [ "$num" -le 9 ]; then
