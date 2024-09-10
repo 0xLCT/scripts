@@ -4,9 +4,13 @@
 convert_flac_to_mp3() {
     input_file="$1"
     output_file="${input_file%.flac}.mp3"
-    bitrate="$2"
+    quality="$2"
 
-    ffmpeg -i "$input_file" -c:a libmp3lame -b:a "$bitrate" "$output_file"
+    if [ "$quality" = "V0" ]; then
+        ffmpeg -i "$input_file" -c:a libmp3lame -q:a 0 "$output_file"
+    else
+        ffmpeg -i "$input_file" -c:a libmp3lame -b:a "$quality" "$output_file"
+    fi
 }
 
 # Prompt user for conversion option
@@ -16,10 +20,10 @@ printf "2. Convert to MP3 320kbps\n"
 printf "Enter your choice (1 or 2): "
 read choice
 
-# Set bitrate based on user choice
+# Set quality based on user choice
 case $choice in
-    1) bitrate="V0";;
-    2) bitrate="320k";;
+    1) quality="V0";;
+    2) quality="320k";;
     *) printf "Invalid choice. Exiting.\n"; exit 1;;
 esac
 
@@ -28,7 +32,7 @@ for file in *.flac; do
     # Check if file exists and is a regular file
     if [ -f "$file" ]; then
         printf "Converting %s to MP3...\n" "$file"
-        convert_flac_to_mp3 "$file" "$bitrate"
+        convert_flac_to_mp3 "$file" "$quality"
     fi
 done
 
