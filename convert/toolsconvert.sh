@@ -4,8 +4,8 @@ main() {
         exit
     }
     function1() {
-        echo "Debian"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/convert/flacto320andv0.sh
+        echo "MP3 selected"
+        bash <(curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/convert/flacto320andv0.sh)
     }
     
 
