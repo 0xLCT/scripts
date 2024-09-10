@@ -27,12 +27,22 @@ case $choice in
     *) printf "Invalid choice. Exiting.\n"; exit 1;;
 esac
 
+# Prompt user for deletion option
+printf "Do you want to delete the original FLAC files after conversion? (y/n): "
+read delete_option
+
 # Loop through all files in the current directory
 for file in *.flac; do
     # Check if file exists and is a regular file
     if [ -f "$file" ]; then
         printf "Converting %s to MP3...\n" "$file"
         convert_flac_to_mp3 "$file" "$quality"
+        
+        # Delete original FLAC file if user chose to do so
+        if [ "$delete_option" = "y" ] || [ "$delete_option" = "Y" ]; then
+            rm "$file"
+            printf "Deleted original file: %s\n" "$file"
+        fi
     fi
 done
 
