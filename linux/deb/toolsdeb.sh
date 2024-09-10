@@ -7,33 +7,27 @@ main() {
 
     function1() {
         echo "[1] Setup choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/setup.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/setup.sh)
     }
 
     function2() {
         echo "[2] Install docker choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/docker.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/docker.sh)
     }
     function3() {
         echo "[3] Install synchthing choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/syncthing.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/syncthing.sh)
     }
     function4() {
         echo "[4] Install NodeJS choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/nodeinstall.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/nodeinstall.sh)
     }
     function5() {
         echo "[5] Install VSCode choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/vscodeinstall.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/vscodeinstall.sh)
     }
 
 
-
-    # ... define functions 3 to 9 similarly ...
-
-    function8() {
-        echo "[8]Pentest choosen"
-    }
 
     printf "Debian Tools\n\nSelect an option 0-9 \n\n[1] Initial setup\n[2] Install docker\n[3] Install and enable Syncthing\n[4] Install NodeJS\n[5] Install VSCode\n[0] Exit\n "
     read num

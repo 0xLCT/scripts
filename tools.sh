@@ -6,7 +6,7 @@ main() {
     }
 
     function1() {
-        echo "[1]Debian choosen"
+        echo "[1]Linux choosen"
         bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/deb/toolsdeb.sh)
     }
 
@@ -32,7 +32,7 @@ main() {
                                        
     
 EOF
-    printf "Select an option 0-9 \n\n[1] Debian\n[2] Redhat\n[5] Linux\n[8] Pentest\n[0] Exit\n "
+    printf "Select an option 0-9 \n\n[1] Linux\n[8] Pentest\n[0] Exit\n "
     read num
 
     if [ "$num" -ge 0 ] && [ "$num" -le 9 ]; then
