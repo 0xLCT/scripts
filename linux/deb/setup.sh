@@ -14,11 +14,11 @@ sudo apt upgrade -y
 # Add Git PPA and install latest Git
 sudo apt install git -y
 
-# Add user 'lucas'
-adduser lucas
+# Add user 'lucasct'
+adduser lucasct
 
-# Add user 'lucas' to sudo group
-usermod -aG sudo lucas
+# Add user 'lucasct' to sudo group
+usermod -aG sudo lucasct
 
 # Clean up unnecessary packages and files
 sudo apt autoremove -y
