@@ -7,11 +7,11 @@ main() {
 
     function1() {
         echo "[1]Linux choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/toolslinux.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/toolsLinux.sh)
     }
     function2() {
         echo "[2]Convert choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/convert/toolsconvert.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/convert/toolsConvert.sh)
     }
 
     function8() {

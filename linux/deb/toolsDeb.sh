@@ -20,7 +20,7 @@ main() {
     }
     function4() {
         echo "[4] Install NodeJS choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/nodeinstall.sh)
+        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/nodeInstall.sh)
     }
     function5() {
         echo "[5] Install VSCode choosen"

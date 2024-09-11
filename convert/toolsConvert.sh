@@ -7,6 +7,10 @@ main() {
         echo "MP3 selected"
         bash <(curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/convert/flacto320andv0.sh)
     }
+    function1() {
+        echo "MP3 selected"
+        bash <(curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/convert/webpToPng.sh)
+    }
     
 
 

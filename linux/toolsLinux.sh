@@ -6,11 +6,11 @@ main() {
     }
     function1() {
         echo "Debian"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/linux/deb/toolsdeb.sh
+        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/linux/deb/toolsDeb.sh
     }
     function2() {
         echo "Redhat"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/linux/rh/toolsrh.sh
+        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/linux/rh/toolsRh.sh
     }
 
     function9() {
