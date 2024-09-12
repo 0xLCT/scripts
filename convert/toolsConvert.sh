@@ -4,17 +4,17 @@ main() {
         exit
     }
     function1() {
-        echo "MP3 selected"
+        echo "FLAC to MP3 selected"
         bash <(curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/convert/flacto320andv0.sh)
     }
-    function1() {
-        echo "MP3 selected"
+    function2() {
+        echo "WebP to PNG selected"
         bash <(curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/convert/webpToPng.sh)
     }
     
 
 
-    printf "Convert Tools\n\nSelect an option 0-9 \n\n[1] Folder to MP3\n[0] Exit\n "
+    printf "Convert Tools\n\nSelect an option 0-9 \n\n[1] FLAC to MP3\n[2] WebP to PNG\n[0] Exit\n "
     read num
 
     if [ "$num" -ge 0 ] && [ "$num" -le 9 ]; then
