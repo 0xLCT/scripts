@@ -7,24 +7,24 @@ main() {
 
     function1() {
         echo "[1] Setup choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/setup.sh)
+        bash <(curl -s https://raw.githubusercontent.com/0xLCT/scripts/master/shell/linux/deb/setup.sh)
     }
 
     function2() {
-        echo "[2] Install docker choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/docker.sh)
+        echo "[2] Install docker choosen Unavaible"
+        bash <(curl -s https://raw.githubusercontent.com/0xLCT/scripts/master/shell/linux/deb/docker.sh)
     }
     function3() {
         echo "[3] Install synchthing choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/syncthing.sh)
+        bash <(curl -s https://raw.githubusercontent.com/0xLCT/scripts/master/shell/linux/deb/syncthing.sh)
     }
     function4() {
         echo "[4] Install NodeJS choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/nodeInstall.sh)
+        bash <(curl -s https://raw.githubusercontent.com/0xLCT/scripts/master/shell/linux/deb/nodeInstall.sh)
     }
     function5() {
         echo "[5] Install VSCode choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/deb/vscodeinstall.sh)
+        bash <(curl -s https://raw.githubusercontent.com/0xLCT/scripts/master/shell/linux/deb/vscodeinstall.sh)
     }
 
 

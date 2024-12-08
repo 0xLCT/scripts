@@ -7,16 +7,16 @@ main() {
 
     function1() {
         echo "[1]Linux choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/linux/toolsLinux.sh)
+        bash <(curl -s https://raw.githubusercontent.com/0xLCT/scripts/master/shell/linux/toolsLinux.sh)
     }
     function2() {
         echo "[2]Convert choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/convert/toolsConvert.sh)
+        bash <(curl -s https://raw.githubusercontent.com/0xLCT/scripts/master/shell/convert/toolsConvert.sh)
     }
 
     function8() {
         echo "[8]Pentest choosen"
-        bash <(curl -s https://raw.githubusercontent.com/lctrevizan/scripts/master/pentest/toolspentest.sh)
+        bash <(curl -s https://raw.githubusercontent.com/0xLCT/scripts/master/shell/pentest/toolspentest.sh)
     }   
     printf "\nlctrev's\n"
     cat << "EOF"        

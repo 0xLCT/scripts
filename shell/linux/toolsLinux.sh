@@ -6,16 +6,16 @@ main() {
     }
     function1() {
         echo "Debian"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/linux/deb/toolsDeb.sh
+        curl -fsS https://raw.githubusercontent.com/0xLCT/scripts/main/shell/linux/deb/toolsDeb.sh
     }
     function2() {
         echo "Redhat"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/linux/rh/toolsRh.sh
+        curl -fsS https://raw.githubusercontent.com/0xLCT/scripts/main/shell/linux/rh/toolsRh.sh
     }
 
     function9() {
         echo "[9] Flatpaks choosen"
-        curl -fsS https://raw.githubusercontent.com/lctrevizan/debscripts/main/linux/flatpaks.sh | sh
+        curl -fsS https://raw.githubusercontent.com/0xLCT/scripts/main/shell/linux/flatpaks.sh | sh
     }
 
 
